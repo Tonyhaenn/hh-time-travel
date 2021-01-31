@@ -1,0 +1,8 @@
+Repo to substantiate the issue referenced here:
+https://github.com/nomiclabs/hardhat/issues/1183
+
+I created a toy contract that I could interact with to test that the block.timestamp was moving forward.
+
+I have two different implementations that advance the time in the test.js file. You can see that the first version (the flawed one) works only when the contract state doesn’t update. It passes in the first test suite, but as soon as I start updating the contract state by incrementing a uint256, I get the failure in the second test suite.
+
+In the third suite, I show that the workaround solution works
